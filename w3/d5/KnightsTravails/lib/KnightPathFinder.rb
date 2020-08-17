@@ -58,6 +58,24 @@ class KnightPathFinder
         valid_moves.each {|move| @considered_moves[move[0]][move[1]] = true}
     end
 
+    def find_path(end_pos)
+        # pos(v) => node
+        # bfs
+        end_node = @root_node.bfs(end_pos)
+        self.trace_path_back(end_node)
+    end
+
+    def trace_path_back(node)
+        # [ p0, p1, p2]
+        res = []
+        while node
+            res << node.value 
+            node = node.parent
+        end
+        res
+    end
+
+
     # def inspect
     #     @root_node.inspect
     # end
@@ -90,6 +108,8 @@ if __FILE__ == $PROGRAM_NAME
     # k.root_node.print
     # p k
     # k.inspect
+    p k.find_path([7,6])
+    p k.find_path([0,0])
 
     
 end
