@@ -1,5 +1,5 @@
 require_relative "Piece.rb"
-require_relative "Slideble.rb"
+require_relative "modules/Slideable.rb"
 
 class RBQ < Piece
 
