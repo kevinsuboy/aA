@@ -11,7 +11,13 @@
 #   4 points awarded for linear runtime
 #
 # This component of the assessment is estimated to take 10 minutes.
-
+def anagrams(str1,str2)
+    hash1 = Hash.new(0)
+    hash2 = Hash.new(0)
+    str1.each_char {|c| hash1[c]+=1}
+    str2.each_char {|c| hash2[c]+=1}
+    hash1 == hash2
+end
 
 # Test Cases
 p anagrams("restful", "fluster")    # => true
