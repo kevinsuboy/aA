@@ -7,18 +7,6 @@ def it_was_ok
   #
   # Find the id, title, and score of all movies with scores between 2 and 3
 
-
-
-  # .where(score: 2..3)
-  # basic select from 'movie' table
-  movie = Movie
-  .select(:id,:title,:score)
-  .where(score: 2..3) # this doesn't ex
-  # movie = movie.limit(2)# this doesn't ex
-  # p movie # this would ex (?)
-  # movie = movie.order(:title)# this doesn't ex
-
-  # our concl: rails c ex. right away
 end
 
 def harrison_ford
@@ -33,30 +21,6 @@ def harrison_ford
   # Find the id and title of all movies in which Harrison Ford
   # appeared but not as a lead actor
 
-
-  # id title, movies
-    # Movie model
-    # select(id, title)
-  # Movie relations to get an actor:
-    # has_many actors (produces Actor)
-  # Condition (where)
-    # appear, but not leadd
-    # lead implies id #1?
-
-  # .join(actors)
-    # we get a giant table of movies+actors
-    # we can filter with actor names
-    # filter re on actor_id value
-  Movie
-  .select(:id,:title)
-  .joins(:actors)
-  .where(actors: {name: 'Harrison Ford'})
-  .where.not(castings: {ord: 1})
-
-  # WHERE
-    # actors.name = 'HF'
-  # WHERE NOT
-    # castings.ord != 1
 end
 
 def biggest_cast
@@ -74,29 +38,6 @@ def biggest_cast
   # Find the id and title of the 3 movies with the
   # largest casts (i.e most actors)
 
-
-# ? where do we put aggre
-  #! aggr is its own thing
-    # .sum, .count, .max
-
-  # MOVIES relation
-  #! Desired SQL:
-  # SELECT:
-    # id, title, count(castings)
-  # GROUP BY #? do we need to activerec?
-    # movie_id (id)
-  # ORDER
-    # most actors
-  # castings.. list of actors (JOIN)
-    # count these
-  # 3 moves (LIMITS 3)
-  Movie
-    .select(:id,:title)
-    .order('count(castings) DESC')
-    .joins(:castings)
-    .group(:id)
-    .limit(3)
-
 end
 
 def directed_by_one_of(them)
@@ -111,10 +52,7 @@ def directed_by_one_of(them)
   # Movie.where(yr: years)
   #
   # Find the id and title of all the movies directed by one of 'them'.
-  Movie
-  .select(:id,:title)
-  .joins(:director)
-  .where(actors: {name: them})
+
 end
 
 def movie_names_before_1940
@@ -128,5 +66,5 @@ def movie_names_before_1940
   # improve performace for larger queries.
   #
   # Use pluck to find the title of all movies made before 1940.
-  Movie.where('yr<1940').pluck(:title)
+
 end
