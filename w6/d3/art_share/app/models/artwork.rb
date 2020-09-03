@@ -10,7 +10,7 @@
 class Artwork < ApplicationRecord
     validates :artist_id, uniqueness: {scope: :title, message: "your title must be unique"} 
 
-    belongs_to :artist
+    belongs_to :artist,
         primary_key: :id,
         foreign_key: :artist_id,
         class_name: :User
