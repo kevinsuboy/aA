@@ -1,0 +1,32 @@
+<h1>New Kitteh?!</h1>
+
+<form action="<%= cats_url %>" method="POST">
+
+  <label for="name">Name</label>
+  <input id="name" type="text" name="cat[name]" value="<%= @kitty.name %>">
+  <br>
+  <label for="Birthdate">Birthdate</label>
+  <input id="birth_date" type="text" name="cat[birth_date]" value="<%= @kitty.birth_date %>">
+  <br>
+
+
+  
+  <label for="gender">Gender</label>
+ 
+  <input type="radio" id="male" name="cat[gender]" value="M" checked=<%@kitty.gender == "M"%> >
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="cat[gender]" value="F" checked=<%@kitty.gender == "F"%>>
+  <label for="female">Female</label>
+
+
+
+  <br>
+  <label for="color">Color</label>
+  <input id="color" type="text" name="cat[color]" value="<%= @kitty.color %>">
+  <br>
+  <label for="description">Description</label>
+  <input id="description" type="text" name="cat[description]" value="<%= @kitty.description %>">
+
+  <input type="submit" value="New Cat">
+
+</form>

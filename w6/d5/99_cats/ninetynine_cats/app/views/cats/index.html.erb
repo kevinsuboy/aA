@@ -1,0 +1,21 @@
+<h1>All the Kittehs!</h1>
+
+<!--
+  <%# ruby code that will not be printed %>
+  <%#=  ruby code that we want to render %>
+-->
+
+    <% @kittens.each do |kitten| %>
+      <h1><%= kitten.name %></h1>
+<ul>
+      <li><%= kitten.birth_date %></li>
+      <li><%= kitten.gender %></li>
+      <li><%= kitten.color %></li>
+      <li><%= kitten.description %></li>
+</ul>
+    <% end %>
+  <!-- 
+  <li><%#= render @kittens %></li>
+  -->
+
+
