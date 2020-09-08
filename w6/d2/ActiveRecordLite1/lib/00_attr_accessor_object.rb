@@ -1,7 +1,6 @@
-require 'byebug'
 class AttrAccessorObject
   def self.my_attr_accessor(*names)
-    debugger
+    # debugger
     # ...
     # p names
     names.each do |name|

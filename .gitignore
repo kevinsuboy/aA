@@ -3,3 +3,4 @@
 *.DS*
 *.lock
 *.mp4
+*.pid
