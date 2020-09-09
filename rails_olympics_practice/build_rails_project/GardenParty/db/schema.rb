@@ -10,9 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_13_215708) do
+ActiveRecord::Schema.define(version: 2020_09_08_023219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "flowers", force: :cascade do |t|
+    t.string "flower_type", null: false
+    t.integer "gardener_id", null: false
+    t.integer "garden_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_id"], name: "index_flowers_on_garden_id"
+    t.index ["gardener_id"], name: "index_flowers_on_gardener_id"
+  end
+
+  create_table "gardens", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "size", null: false
+    t.integer "garden_owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["garden_owner_id"], name: "index_gardens_on_garden_owner_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

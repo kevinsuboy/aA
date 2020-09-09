@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: artworks
+#
+#  id         :bigint           not null, primary key
+#  title      :string           not null
+#  image_url  :string           not null
+#  artist_id  :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  favorite   :boolean          default(FALSE)
+#
 class Artwork < ApplicationRecord
   # N.B. Remember, Rails 5 automatically validates the presence of
   # belongs_to associations, so we can leave the validation of artist

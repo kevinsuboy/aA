@@ -9,10 +9,14 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-require 'test_helper'
+class Garden < ApplicationRecord
+    validates :name, presence: true, uniqueness: {scope: :garden_owner_id}
+    validates :size, presence: true
+    has_many :flowers,
+    foreign_key: :garden_id,
+    class_name: :Flower
+    belongs_to :garden_owner,
+    foreign_key: :garden_owner_id,
+    class_name: :User
 
-class GardenTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
 end

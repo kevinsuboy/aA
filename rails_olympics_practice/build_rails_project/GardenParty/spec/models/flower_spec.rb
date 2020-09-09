@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: flowers
+#
+#  id          :bigint           not null, primary key
+#  flower_type :string           not null
+#  gardener_id :integer          not null
+#  garden_id   :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe Flower, type: :model do
