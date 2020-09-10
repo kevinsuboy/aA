@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ body{
+     background: grey;
+ }
+.main_logo {
+    font-family: 'Bungee Inline', cursive;
+    color: goldenrod;
+    font-size: 100px;
+    display: flex; justify-content: center;
+}
+.login{
+    display: flex;
+    justify-content: flex-end;
+}
+.button{
+    display: block;
+    background-color: skyblue;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: content-box;
+    font-size: 20px;
+
+}
+/* #signin{
+    display: block;
+    background-color: skyblue;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: content-box;
+} */
+
+
+.pageheader {
+    font-family: 'Bungee Inline', cursive;
+    color: #39BAAC;
+    font-size: 70px;
+    display: flex; justify-content: center;
+}
+
+.form p label {
+    padding-right: 10px;
+    color: white;
+    font-size: 20px
+}
+
+.form p label, .form p input {
+    width: 200px;
+}
+
+.form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.errors {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 50px;
+}
