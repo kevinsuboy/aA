@@ -1,0 +1,2 @@
+user_spec.rb: line29,
+    not so clear on why "expect(...).not_to eq(...)" proves that we don't save to DB
