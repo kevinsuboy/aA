@@ -1,0 +1,72 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+    align-items: center;
+    border-bottom: 2px solid $light-gray;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+    display: flex;
+    justify-content: space-between;
+    // flex-direction: row;
+    // align-items: space-between;
+}
+
+.left-nav > ul > li {
+    display: flex;
+    margin-right: 7px;
+    padding: 10px;
+}
+
+.right-nav > ul > li {
+    display: flex;
+    margin-left: 7px;
+    // align-items: center;
+    // padding: 10px;
+   
+}
+
+.right-nav > ul > li:last-of-type {
+    font-family: Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+    // font-size: 20px;
+    padding: 0 10px;
+}
+
+.left-nav > ul > li:hover,
+.right-nav > ul > li:last-of-type:hover {
+    background-color: $lightest_gray;
+    
+}
+
+.left-nav span {
+    font-family: Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+    margin-left: 10px;
+}
+
+
+.right-nav i {
+    font-size:20px;   
+}
+
+#gear-dropdown{ // gear-dropdown is stuff
+    display: none;
+    position: absolute;
+}
+#the_gearest_button{
+    display: inline-block;
+}
+#the_gearest_button:hover #gear-dropdown{ //on hover of button event, display gear-dropdown (display sub-table)
+    display: block;
+    background-color: red;
+    // position: absolute;
+    // right: 0px;
+    // top:0px;
+}
+// #gear-dropdown *{
+//     display: block;
+//     padding: 10px;
+// }
