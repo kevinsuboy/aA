@@ -1,0 +1,12 @@
+<h1> Welcome <%=@sub.title%> </h1>
+<br>
+<h1> Here are the posts! </h1>
+<br>
+<a href="<%=new_post_url%>">Make a new post!</a>
+<div>
+    <ul>
+        <% @sub.posts.each do |post| %>
+            <li><a href="<%=post_url(post)%>"><%=post.title%></a></li>
+        <% end %>
+    </ul>
+</div>
