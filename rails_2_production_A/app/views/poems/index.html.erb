@@ -1,0 +1,14 @@
+<h1>All Poems</h1>
+
+<a href="<%= new_poem_url %>"><p>Create New Poem</p></a>
+
+<div>
+    <% @poems.each do |poem| %>
+        <p><%= poem.title %></p>
+        <ul>
+            <li><%= poem.stanzas %></li>
+            <li><%= poem.complete ? "Done" : "" %></li>
+        </ul>
+        <p><a href="<%= edit_poem_url(poem) %>">Edit Poem</a></p>
+    <% end %>
+</div>

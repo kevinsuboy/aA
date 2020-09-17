@@ -1,0 +1,28 @@
+<h1>Edit Poem Form</h1>
+
+<div>
+    <form action="<%= poem_url %>" method="post">
+        <%= auth_token %>
+        <input type="hidden" name="_method" value="patch">
+        <label>Title:
+            <input name="poem[title]" value = "<%= @poem.title %>">
+        </label>
+        <label>Stanzas:
+            <input name="poem[stanzas]" value = "<%= @poem.stanzas %>">
+        </label>
+        <p>Complete?</p>
+        <label>True:
+            <input type="radio" name="poem[complete]" value="true" <%= @poem.complete ? "checked" : "" %>>
+        </label>
+        <label>True:
+            <input type="radio" name="poem[complete]" value="false" <%= @poem.complete ? "" : "checked" %>>
+        </label>
+        <button type="submit">Save Edited Poem
+    </form>
+</div>
+
+<div>
+    <% if flash[:errors] %>
+    <p><%= flash[:errors].join(", ") %></p>
+    <% end %>
+</div>
