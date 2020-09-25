@@ -10,16 +10,17 @@ Function.prototype.curry = function (n_args){
     let nums = []; // compare nums.length
     //
     let fn = this; // fn === sumThree
-    let fn2 = function _curriedSum() {
+    return function _curriedSum() {
         nums.push(arguments[0]);
         if(nums.length === N){
+            // debugger
             return fn(...nums);
         } else {
-            debugger
-            return fn2; // needs to return _curriedSum (Function)
+            // debugger
+            return _curriedSum; // needs to return _curriedSum (Function)
         }
     }
-    return fn2;
+    // return fn2;
 }
 
 // you'll write `Function#curry`!
