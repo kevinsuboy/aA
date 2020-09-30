@@ -1,0 +1,40 @@
+/* GAME */
+.game{
+    width: 1000px;
+    margin: 0 auto; 
+    border: 1px solid red;
+}
+
+/* board */
+.board{
+    border: 1px solid orange;
+    margin: 0 auto;
+    width: 900px;
+}
+.row{
+    display:flex;
+}
+
+.grid {
+    margin: 0 auto;
+    border: 1px solid blue;
+    width: 360px;
+}
+/* TILE */
+.tile{
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid darkgrey;
+    border-bottom: 2px solid darkgrey;
+    min-width: 36px;
+    min-height: 36px;
+    background-color: lightgrey;
+    text-align: center;
+    font-size: 27px;
+    cursor: pointer;
+    border-style: outset;
+}
+.explored{
+    border-style: inset;
+}
+
